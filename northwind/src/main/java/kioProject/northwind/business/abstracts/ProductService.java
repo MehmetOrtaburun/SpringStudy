@@ -2,18 +2,17 @@ package kioProject.northwind.business.abstracts;
 
 import java.util.List;
 
-
-
 import kioProject.northwind.core.utilities.results.DataResult;
 import kioProject.northwind.core.utilities.results.Result;
 import kioProject.northwind.entities.concretes.Product;
+import kioProject.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductService {
 
 	DataResult<List<Product>> getAll();
-	
+
 	DataResult<List<Product>> getAllSorted(String aramaKriteri);
-	
+
 	DataResult<List<Product>> getAll(int pageNo, int pageSize);
 
 	Result add(Product product);
@@ -31,5 +30,10 @@ public interface ProductService {
 	DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
 	DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+	
+	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
+	
+	
+	
 
 }
